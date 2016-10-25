@@ -15,9 +15,9 @@ vehicle <- tibble::rownames_to_column(mtcars, var='car')
 BestGearsCyl <- function(gears, cylinders) {
   ret <- vehicle %>%  
         filter(gear == gears, cyl == cylinders) %>% 
-        filter(mgp == max(mpg)) %>% 
+        filter(mpg == max(mpg)) %>% 
         select(car)
 }
 
 # Get the best mpg car for 6 cylinder cars with 4 gears
-answer <- BestGearsCyl(6, 4)
+answer <- BestGearsCyl(4, 6)
